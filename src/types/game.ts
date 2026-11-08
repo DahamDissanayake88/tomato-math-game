@@ -26,6 +26,11 @@ export interface GameStats {
 
 export type GameScreen = 'welcome' | 'playing' | 'results';
 
+export interface FeedbackMessage {
+  text: string;
+  type: 'success' | 'error' | 'info';
+}
+
 export interface AnswerSubmissionResult {
   isCorrect: boolean;
   scoreAdded: number;
