@@ -114,7 +114,7 @@ export default function Home() {
       <footer className="w-full max-w-3xl mt-6 pt-4 border-t border-rose-100 text-center">
         <div className="flex flex-wrap items-center justify-center gap-2 text-[11px] text-slate-500 font-medium">
           <span className="px-2.5 py-1 bg-white rounded-lg border border-slate-200 shadow-2xs">
-            🍅 <strong>Phase 4:</strong> Complete Lifecycle
+            🍅 <strong>Tomato Math Game:</strong> Enterprise Edition
           </span>
           <span className="px-2.5 py-1 bg-white rounded-lg border border-slate-200 shadow-2xs">
             👤 <strong>Virtual Identity:</strong> {username || 'Guest'}

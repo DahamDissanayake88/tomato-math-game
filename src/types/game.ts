@@ -8,11 +8,6 @@ export interface Puzzle {
   solution: number;
 }
 
-export interface PlayerSession {
-  username: string;
-  startedAt: number;
-}
-
 export interface GameStats {
   score: number;
   level: number;
@@ -29,14 +24,4 @@ export type GameScreen = 'welcome' | 'playing' | 'results';
 export interface FeedbackMessage {
   text: string;
   type: 'success' | 'error' | 'info';
-}
-
-export interface AnswerSubmissionResult {
-  isCorrect: boolean;
-  scoreAdded: number;
-  previousScore: number;
-  newScore: number;
-  correctSolution: number;
-  isLevelUp: boolean;
-  newLevel: number;
 }
