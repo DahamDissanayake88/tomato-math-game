@@ -4,17 +4,62 @@
 
 :root {
   --foreground-rgb: 30, 41, 59;
-  --background-start-rgb: 248, 250, 252;
-  --background-end-rgb: 241, 245, 249;
+  --background-start-rgb: 255, 241, 242;
+  --background-mid-rgb: 255, 255, 255;
+  --background-end-rgb: 255, 247, 237;
 }
 
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
-      to bottom,
-      rgb(var(--background-start-rgb)),
-      rgb(var(--background-end-rgb))
+      135deg,
+      rgb(var(--background-start-rgb)) 0%,
+      rgb(var(--background-mid-rgb)) 50%,
+      rgb(var(--background-end-rgb)) 100%
     );
   min-height: 100vh;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  overflow-x: hidden;
+}
+
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.92) translateY(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-4deg); }
+  75% { transform: rotate(4deg); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+}
+
+.animate-pop-in {
+  animation: popIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-wiggle {
+  animation: wiggle 0.4s ease-in-out;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Glassmorphism utility */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(254, 205, 211, 0.6);
 }
